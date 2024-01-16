@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter';
-const counterStore = useCounterStore()
+// import { useCounterStore } from '@/stores/counter';
+// const counterStore = useCounterStore()
 defineProps<{
   msg: string
 }>()
@@ -13,7 +13,7 @@ defineProps<{
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-      <button @click="counterStore.increment()">Count: {{ counterStore.doubleCount}}</button>
+      <!-- <button @click="counterStore.increment()">Count: {{ counterStore.doubleCount}}</button> -->
     </h3>
   </div>
 </template>
