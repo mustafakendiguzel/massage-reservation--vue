@@ -11,7 +11,7 @@ const { isMenuOpen } = storeToRefs(navbarStore)
     <div class="navbar">
       <div class="navbar-brand">
         <img src="https://logodix.com/logo/1246419.png" width="50" height="50" alt="Vue.js Logo" />
-        <span class="navbar-logo">Lotus Masaj</span>
+        <router-link class="navbar-logo-title" to="/">Lotus Masaj</router-link>
       </div>
       <div class="web-navbar-items">
         <NavbarItems />
@@ -49,9 +49,11 @@ const { isMenuOpen } = storeToRefs(navbarStore)
   gap: 0.5em;
 }
 
-.navbar-logo {
+.navbar-logo-title {
   font-size: 1.5em;
   font-weight: bold;
+  cursor: pointer;
+  color: white;
 }
 
 .hamburger-icon {

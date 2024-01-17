@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import AnimationJson from './animations/animation.json'
+import AnimationJson from './animations/massageAnimation.json'
 </script>
 <!-- CenteredMassageIntro.vue -->
 
 <template>
   <div class="contact-animation" ref="animationContainer">
-    <div class="bright-white centered-title">
-      <h1>Lotus Masaj</h1>
-    </div>
     <Vue3Lottie :animation-data="AnimationJson" />
   </div>
 </template>
@@ -24,7 +21,8 @@ import AnimationJson from './animations/animation.json'
 }
 
 .bright-white {
-  color: #e5e5e5; /* Replace with a brighter shade of white if desired */
+  color: #e5e5e5;
+  /* Replace with a brighter shade of white if desired */
 }
 
 @media only screen and (max-width: 1268px) {
