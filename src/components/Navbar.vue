@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import NavbarItems from './NavbarItems.vue'
 import { useNavbarStore } from '@/stores/navbar'
 const navbarStore = useNavbarStore()
+const { isMenuOpen } = storeToRefs(navbarStore)
 </script>
 
 <template>

@@ -1,20 +1,18 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export const useNavbarStore = defineStore('navbar', () => {
-  const isMenuOpen = ref(false)
+export const useNavbarStore = defineStore('navbar', {
+  state: () => ({
+    isMenuOpen: ref(false)
+  }),
 
-  // const toggleMenu = () => {
-  //   isMenuOpen.value = !isMenuOpen.value
-  //   console.log(isMenuOpen)
-  // }
+  actions: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
 
-  function toggleMenu() {
-    isMenuOpen.value = !isMenuOpen.value
+    closeMenu() {
+      this.isMenuOpen = false
+    }
   }
-
-  const closeMenu = () => {
-    isMenuOpen.value = false
-  }
-  return { isMenuOpen, toggleMenu, closeMenu }
 })
