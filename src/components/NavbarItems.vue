@@ -8,7 +8,6 @@
 
 <style>
 .active-link {
-  background-color: yellow;
   color: white;
 }
 

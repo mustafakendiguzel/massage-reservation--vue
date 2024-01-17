@@ -2,12 +2,19 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const useNavbarStore = defineStore('navbar', () => {
-  const MOBILE_WIDTH = 768
-  const isMobile = ref(window.innerWidth < MOBILE_WIDTH)
+  const isMenuOpen = ref(false)
 
-  function updateMobileView() {
-    isMobile.value = window.innerWidth < MOBILE_WIDTH
+  // const toggleMenu = () => {
+  //   isMenuOpen.value = !isMenuOpen.value
+  //   console.log(isMenuOpen)
+  // }
+
+  function toggleMenu() {
+    isMenuOpen.value = !isMenuOpen.value
   }
 
-  return { isMobile, updateMobileView }
+  const closeMenu = () => {
+    isMenuOpen.value = false
+  }
+  return { isMenuOpen, toggleMenu, closeMenu }
 })
