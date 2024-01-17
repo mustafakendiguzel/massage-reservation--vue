@@ -10,39 +10,35 @@ import { useNavbarStore } from '@/stores/navbar'
       <div class="navbar-brand">
         <img src="https://logodix.com/logo/1246419.png" width="50" height="50" alt="Vue.js Logo" />
       </div>
-      <div class="navbar-links">
+      <div class="web-navbar-items">
         <NavbarItems />
       </div>
-      <div v-if="isMobile">
-        <div>{{ mobileMessage }}</div>
-        <!-- <NavbarItems /> -->
+
+      <div class="hamburger-icon" @click="toggleMenu">
+        <font-awesome-icon icon="fa-solid fa-bars" style="font-size: x-large" />
       </div>
     </div>
+  </div>
+  <div class="mobile-navbar-items" :class="{ 'is-active': isMenuOpen }">
+    <NavbarItems />
   </div>
 </template>
 
 <script lang="ts">
 export default {
   data() {
-    const navbarStore = useNavbarStore()
     return {
-      navbarStore,
-      isMobile: navbarStore.isMobile,
-      mobileMessage: 'Bu bir mobil cihazdır.'
+      isMenuOpen: false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
+    closeMenu() {
+      this.isMenuOpen = false
     }
   }
-  // mounted() {
-  //   console.log('a', this.navbarStore.isMobile)
-  //   window.addEventListener('resize', this.navbarStore.updateMobileView)
-
-  //   watch(
-  //     () => this.navbarStore.isMobile,
-  //     (newVal) => {
-  //       this.isMobile = newVal
-  //       console.log('isMobile changed:', newVal)
-  //     }
-  //   )
-  // }
 }
 </script>
 
@@ -67,30 +63,12 @@ export default {
   font-weight: bold;
 }
 
-.navbar-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navbar-toggle {
-  display: none;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
 .navbar-menu-container {
   position: absolute;
   top: 60px;
   left: 0;
   width: 100%;
   display: none;
-}
-
-.navbar-menu-container.is-active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .navbar-menu {
@@ -106,6 +84,10 @@ export default {
   border-bottom: 1px solid #555;
 }
 
+.hamburger-icon {
+  cursor: pointer;
+}
+
 .navbar-menu a:hover {
   background-color: #e5e5e5;
   color: #000000;
@@ -116,13 +98,39 @@ export default {
   color: white; /* Customize the text color for better visibility */
 }
 
+.mobile-navbar-items {
+  display: none;
+  justify-content: end;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #14213d;
+  width: 50%;
+  margin-left: auto;
+  height: auto;
+  padding-right: 10px;
+}
+
+.mobile-navbar-items.is-active {
+  display: flex;
+}
+
 @media only screen and (max-width: 768px) {
-  .navbar-links {
+  .web-navbar-items {
     display: none;
   }
 
   .navbar-toggle {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-navbar-items {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: none;
   }
 }
 </style>
