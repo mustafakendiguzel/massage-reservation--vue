@@ -62,7 +62,7 @@ const { isMenuOpen } = storeToRefs(navbarStore)
 
 .mobile-navbar-items {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   flex-direction: column;
   align-items: flex-end;
   background-color: #14213d;
