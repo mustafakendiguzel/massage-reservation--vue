@@ -10,20 +10,6 @@ import AnimationJson from './animations/massageAnimation.json'
 </template>
 
 <style scoped>
-.contact-animation {
-  width: 50%;
-}
-
-.centered-title {
-  display: flex;
-  justify-content: center;
-}
-
-.bright-white {
-  color: #e5e5e5;
-  /* Replace with a brighter shade of white if desired */
-}
-
 @media only screen and (max-width: 1268px) {
   .contact-animation {
     width: 100%;

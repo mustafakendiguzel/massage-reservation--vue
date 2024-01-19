@@ -2,6 +2,7 @@
 import UserInput from '@/components/UserInput.vue'
 import PasswordInput from '@/components/PasswordInput.vue'
 import SubmitButton from '@/components/SubmitButton.vue'
+import { UserOutlined, PhoneOutlined } from '@ant-design/icons-vue'
 </script>
 <template>
   <div class="pt-20 flex justify-center items-center gap-40">
@@ -16,7 +17,26 @@ import SubmitButton from '@/components/SubmitButton.vue'
           <div class="container flex flex-col justify-center items-center h-full gap-8 pt-8">
             <div class="flex justify-center items-center w-full">
               <div class="text-center w-2/3">
+                <a-input placeholder="Phone">
+                  <template #prefix>
+                    <UserOutlined />
+                  </template>
+                </a-input>
+              </div>
+            </div>
+
+            <div class="flex justify-center items-center w-full">
+              <div class="text-center w-2/3">
                 <UserInput input-desc="Email" />
+              </div>
+            </div>
+            <div class="flex justify-center items-center w-full">
+              <div class="text-center w-2/3">
+                <a-input placeholder="Phone">
+                  <template #prefix>
+                    <PhoneOutlined />
+                  </template>
+                </a-input>
               </div>
             </div>
 
@@ -32,13 +52,8 @@ import SubmitButton from '@/components/SubmitButton.vue'
                   <div class="text-center">
                     <SubmitButton
                       class="hover:bg-green-600 w-36 hover:!text-white"
-                      button-desc="Giriş Yap"
+                      button-desc="Kayıt Ol"
                     />
-                  </div>
-                  <div class="pt-2">
-                    <a-button type="link"
-                      ><router-link to="forgotPassword"> Şifreni mi unuttun ?</router-link>
-                    </a-button>
                   </div>
                 </div>
               </div>
@@ -49,7 +64,7 @@ import SubmitButton from '@/components/SubmitButton.vue'
           class="register-container rounded-s-2xl w-96 h-24 b-2 border-2 border-solid border-white max-w-96"
         >
           <div class="flex text-center justify-center items-center h-full">
-            Hesabın Yok mu? <router-link to="/register" class="register-link">Kaydol</router-link>
+            Hesabın var mı ?<router-link to="/login" class="register-link">Giriş Yap</router-link>
           </div>
         </div>
       </div>

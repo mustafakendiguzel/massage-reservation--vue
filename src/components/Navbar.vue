@@ -7,70 +7,33 @@ const { isMenuOpen } = storeToRefs(navbarStore)
 </script>
 
 <template>
-  <div class="navbar-container">
-    <div class="navbar">
-      <div class="navbar-brand">
+  <div>
+    <div class="flex justify-between items-center p-4 bg-navbar-blue color text-white rounded-lg">
+      <div class="flex items-center gap-2">
         <img src="https://logodix.com/logo/1246419.png" width="50" height="50" alt="Vue.js Logo" />
-        <router-link class="navbar-logo-title" to="/">Lotus Masaj</router-link>
+        <router-link class="text-2xl font-bold cursor-pointer text-white" to="/"
+          >Lotus Masaj</router-link
+        >
       </div>
       <div class="web-navbar-items">
         <NavbarItems />
       </div>
 
-      <div class="hamburger-icon" @click="navbarStore.toggleMenu">
-        <font-awesome-icon icon="fa-solid fa-bars" style="font-size: x-large" />
+      <div class="hamburger-icon cursor-pointer" @click="navbarStore.toggleMenu">
+        <font-awesome-icon icon="fa-solid fa-bars" class="text-2xl" />
       </div>
     </div>
   </div>
-  <div class="mobile-navbar-items" v-if="navbarStore.isMenuOpen">
+  <div
+    class="flex justify-end flex-col items-end bg-navbar-blue w-1/2 ml-auto pr-2 mobile-navbar-items"
+    v-if="navbarStore.isMenuOpen"
+  >
     <NavbarItems />
   </div>
 </template>
 
 <style scoped>
 /* Stil dosyanıza özgü stilleri buraya ekleyin */
-.navbar-container {
-  position: relative;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  background-color: #14213d;
-  color: #fff;
-  border-radius: 10px;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.navbar-logo-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  cursor: pointer;
-  color: white;
-}
-
-.hamburger-icon {
-  cursor: pointer;
-}
-
-.mobile-navbar-items {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: #14213d;
-  width: 50%;
-  margin-left: auto;
-  height: auto;
-  padding-right: 10px;
-}
 
 @media only screen and (max-width: 768px) {
   .web-navbar-items {

@@ -6,6 +6,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Vue3Lottie from 'vue3-lottie'
+import Antd from 'ant-design-vue'
+
 library.add(faBars)
 
 import App from './App.vue'
@@ -13,7 +15,7 @@ import router from './router'
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
-app.use(Vue3Lottie)
+app.use(Vue3Lottie).use(Antd)
 app.use(createPinia())
 app.use(router)
 

@@ -5,16 +5,10 @@ import CenteredMassageIntro from '@/components/CenteredMassageIntro.vue'
 
 <template>
   <main>
-    <div class="box">
+    <div class="flex justify-center items-center">
       <CenteredMassageIntro />
     </div>
   </main>
 </template>
 
-<style>
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style></style>

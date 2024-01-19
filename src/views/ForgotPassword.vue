@@ -21,35 +21,17 @@ import SubmitButton from '@/components/SubmitButton.vue'
             </div>
 
             <div class="flex justify-center items-center w-full">
-              <div class="text-center w-2/3">
-                <PasswordInput pass-desc="Şifre" />
-              </div>
-            </div>
-
-            <div class="flex justify-center items-center w-full">
               <div>
                 <div class="flex flex-col justify-center items-center">
                   <div class="text-center">
                     <SubmitButton
                       class="hover:bg-green-600 w-36 hover:!text-white"
-                      button-desc="Giriş Yap"
+                      button-desc="Doğrulama Yolla"
                     />
-                  </div>
-                  <div class="pt-2">
-                    <a-button type="link"
-                      ><router-link to="forgotPassword"> Şifreni mi unuttun ?</router-link>
-                    </a-button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="register-container rounded-s-2xl w-96 h-24 b-2 border-2 border-solid border-white max-w-96"
-        >
-          <div class="flex text-center justify-center items-center h-full">
-            Hesabın Yok mu? <router-link to="/register" class="register-link">Kaydol</router-link>
           </div>
         </div>
       </div>

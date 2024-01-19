@@ -2,7 +2,11 @@
 export default {
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'navbar-blue': '#14213d'
+      }
+    }
   },
   plugins: []
 }
