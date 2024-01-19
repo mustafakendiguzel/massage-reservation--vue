@@ -4,14 +4,13 @@ import AnimationJson from './animations/massageAnimation.json'
 <!-- CenteredMassageIntro.vue -->
 
 <template>
-  <div class="contact-animation" ref="animationContainer">
+  <div class="contact-animation mt-24" ref="animationContainer">
     <Vue3Lottie :animation-data="AnimationJson" />
   </div>
 </template>
 
 <style scoped>
 .contact-animation {
-  margin-top: 100px;
   width: 50%;
 }
 
