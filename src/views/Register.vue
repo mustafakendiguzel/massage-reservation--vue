@@ -17,7 +17,7 @@ import { UserOutlined, PhoneOutlined } from '@ant-design/icons-vue'
           <div class="container flex flex-col justify-center items-center h-full gap-8 pt-8">
             <div class="flex justify-center items-center w-full">
               <div class="text-center w-2/3">
-                <a-input placeholder="Phone">
+                <a-input placeholder="Ad Soyad">
                   <template #prefix>
                     <UserOutlined />
                   </template>
@@ -32,7 +32,7 @@ import { UserOutlined, PhoneOutlined } from '@ant-design/icons-vue'
             </div>
             <div class="flex justify-center items-center w-full">
               <div class="text-center w-2/3">
-                <a-input placeholder="Phone">
+                <a-input placeholder="Telefon">
                   <template #prefix>
                     <PhoneOutlined />
                   </template>
